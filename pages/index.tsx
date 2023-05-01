@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import background from '../public/image.jpg'
 import { BannerLayer } from 'react-scroll-parallax/dist/components/ParallaxBanner/types'
+import Typewriter from 'typewriter-effect';
+import person from '../public/person.png'
 
 export default function Home() {
 
   const background: BannerLayer = {
     image:
-      'https://cdn.pixabay.com/photo/2021/03/22/01/58/monk-6113501_960_720.png',
+      'https://i.imgur.com/lAUqwUQ.png',
     translateY: [0, 50],
     opacity: [1, 0.3],
     scale: [1, 1, 'easeOutCubic'],
@@ -22,9 +24,16 @@ export default function Home() {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-6xl md:text-8xl text-white font-thin">
-          Hello World!
+      <div className="absolute inset-0 flex items-center justify-center flex-col font-press text-white gap-y-14 text-center">
+        <span className='text-2xl'>Hi! My name is <span className='text-[#01F0D6]'>Mateusz</span></span>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl ">
+                  <Typewriter
+            options={{
+              strings: ["Im Front-End Developer", "I hope we get along :)"],
+              autoStart: true,
+              loop: true,
+            }}
+          /> 
         </h1>
       </div>
     ),
@@ -42,7 +51,7 @@ export default function Home() {
   const foreground2: BannerLayer = {
     image:
       'https://www.pulpandwire.com/wp-content/uploads/2019/07/land.png',
-    translateY: [70, 15],
+    translateY: [50, 15],
     scale: [1, 1.1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
   };
@@ -58,16 +67,24 @@ export default function Home() {
   };
 
   return (
-    <section className='main relative h-[600px] bg-[#E0E0E0]'>
+    <section className='main relative bg-[#E0E0E0]'>
     <ParallaxBanner 
       layers={[background,foreground,headline, foreground2, gradientOverlay]}
-      className="aspect-[2/1] bg-gray-900"
+      className="aspect-[2/1] bg-gray-900 h-[100vh] lg:h-auto"
     />
-
-        {/* <div className={`fluid_bakground_with_content h-[400px] bg-[url(../public/image.jpg)] bg-center bg-cover text-white text-[50px]`}>wewW</div>      */}
-        <div className=' relative top-[-100px] mx-6 h-[700px] bg-white shadow-2xl rounded-lg'>
-            
-        </div>           
+    <Parallax speed={20}>
+        <div className=' relative top-[-120px] mx-2  md:mx-6 h-[700px] bg-white shadow-2xl rounded-lg'>
+          <Parallax speed={10}>
+            <div className='w-[250px] rounded-full overflow-hidden absolute lg:left-1/2 transform right-0 lg:-translate-x-1/2 top-[-100px] shadow-xl border-[3px] border-white'>
+              <Image src={person} alt="red_person"/>
+            </div>            
+          </Parallax>
+        </div>         
+        <div className="absolute w-full flex justify-center lg:justify-start top-[-140px] lg:top-[-30px] container  text-center">
+          <h1 className="text-white lg:rotate-[-45deg] font-press neon-text text-3xl lg:text-5xl">SKILLS</h1>
+        </div>
+    </Parallax>
+        
    
      
 

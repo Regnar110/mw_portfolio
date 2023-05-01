@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,5 +10,32 @@
 @tailwind utilities;
 
 body, html {
-  width: 100%
+  width: 100%;
+}
+
+@layer components {
+  .font-press {
+    font-family: 'Press Start 2P', cursive;
+  }
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px #FF0B10,
+      0 0 11px #FF0B10,
+      0 0 19px #FF0B10,
+      0 0 40px #FF0B10,
+      0 0 80px #FF0B10,
+      0 0 90px #FF0B10,
+      0 0 100px #FF0B10,
+      0 0 150px #FF0B10;
+  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+.neon-text {
+  animation: flicker 1.5s infinite alternate;
 }
