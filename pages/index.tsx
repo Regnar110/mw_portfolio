@@ -83,7 +83,7 @@ export default function Home() {
   };
 
   return (
-    <section className='main relative bg-[#aa1c31]'>
+    <section className='main relative bg-gray-200'>
     <ParallaxBanner 
       layers={[background,foreground,headline, foreground2, gradientOverlay]}
       className="aspect-[2/1] bg-gray-900 h-[100vh] lg:h-auto"
