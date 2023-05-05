@@ -99,7 +99,7 @@ export default function Home() {
       />
     </Element>
     <Parallax speed={20}>
-        <div className=' relative top-[-200px] mx-2  md:mx-6  bg-white shadow-2xl rounded-lg flex flex-col'>
+        <div className=' relative top-[-200px] mx-2  md:mx-6  bg-white shadow-2xl rounded-lg flex flex-col overflow-hidden'>
           <Parallax speed={10} className='m-0 p-0'>
             <div className='section_image w-full flex justify-center relative top-[-50px] lg:top-[-100px]'>
               <div className='landing_circle relative w-[180px] lg:w-[250px] rounded-full overflow-hidden border-[3px] border-white shadow-2xl'>
