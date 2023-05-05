@@ -39,3 +39,8 @@ body, html {
 .neon-text {
   animation: flicker 1.5s infinite alternate;
 }
+
+.navactive {
+  background-color:#FF4F53;
+  text-color:white;
+}

@@ -8,6 +8,8 @@ import writing_code from '../public/writing_code.png'
 import responsive_design from '../public/responsive_design.jpg'
 import { Slide, Zoom } from "react-awesome-reveal";
 
+import {Element} from 'react-scroll'
+
 import js from '../public/tools/js.png'
 import ts from '../public/tools/typescript.png'
 import html from '../public/tools/html.png'
@@ -21,6 +23,7 @@ import sanity from '../public/tools/sanity.png'
 import mongodb from '../public/tools/mongodb.png'
 import reactform from '../public/tools/reactform.jpg'
 import Projects from '@/components/Projects';
+import Navigation from '@/components/Navigation';
 
 
 export default function Home() {
@@ -84,10 +87,17 @@ export default function Home() {
 
   return (
     <section className='main relative bg-gray-200'>
-    <ParallaxBanner 
-      layers={[background,foreground,headline, foreground2, gradientOverlay]}
-      className="aspect-[2/1] bg-gray-900 h-[100vh] lg:h-auto"
-    />
+      <Head>
+        <title>Mateusz Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+    <Navigation/>
+    <Element name='home'>
+      <ParallaxBanner 
+        layers={[background,foreground,headline, foreground2, gradientOverlay]}
+        className="aspect-[2/1] bg-gray-900 h-[100vh] lg:h-auto"
+      />
+    </Element>
     <Parallax speed={20}>
         <div className=' relative top-[-200px] mx-2  md:mx-6  bg-white shadow-2xl rounded-lg flex flex-col'>
           <Parallax speed={10} className='m-0 p-0'>
@@ -97,172 +107,181 @@ export default function Home() {
               </div>
             </div>     
           </Parallax>
-          <div className='skills flex flex-col gap-y-6 md:gap-y-20 mb-16'>
-            <div className='header_neon relative flex justify-center'>
-              <h1 className="text-white font-press neon-text text-3xl lg:text-4xl">SKILLS</h1>
-            </div>       
-            <div className='writing_code grid xl:grid-cols-2 justify-items-center gap-y-8 md:gap-0 overflow-hidden'>
-              <Slide direction='left'>
-                <div className='skill_image relative w-[280px] md:w-[600px] order-0'>
-                  <Image src={writing_code} alt='writing_code' />
-                </div>
-              </Slide>
-              <Slide direction='right'>
-                <div className='skill_desc w-full font-press justify-self-start flex flex-col justify-center gap-10 order-1'>
-                  <div className='skill_header  text-[14px] md:text-[32px] flex justify-center'>
-                    <span className='text-[#017ACC]'>{"<> "}</span>
-                    <span>Writing Code</span>
-                    <span>
-                      <Typewriter
-                        options={{
-                          strings: [""],
-                          autoStart: true,
-                          loop: true,
-                        }}
-                      /> 
-                    </span>
-                    <span className='text-[#017ACC]'>{"</>"}</span>
+          <Element name='test1'>
+            <div className='skills flex flex-col gap-y-6 md:gap-y-20 mb-16'>
+              <div className='header_neon relative flex justify-center'>
+                <h1 className="text-white font-press neon-text text-3xl lg:text-4xl">SKILLS</h1>
+              </div>       
+              <div className='writing_code grid xl:grid-cols-2 justify-items-center gap-y-8 md:gap-0 overflow-hidden'>
+                <Slide direction='left'>
+                  <div className='skill_image relative w-[280px] md:w-[600px] order-0'>
+                    <Image src={writing_code} alt='writing_code' />
                   </div>
-                  <div className='description flex flex-col justify-center items-start text-[13px] md:text-[16px] px-6 '>
-                    <span className='text-[#017ACC]'>{"<span>"}</span>
-                    <span className='ml-5'>I create websites and applications using the Javascript programming language. I also use different tools that make my code re-usable, more readable and easier to manage.</span>
-                    <span className='text-[#017ACC]'>{"</span>"}</span>
-                  </div>
-                </div>
-              </Slide>
-
-
-            </div>
-            <div className='responsive_design grid xl:grid-cols-2 justify-items-center gap-y-8 md:gap-0 overflow-hidden'>
-                <div className='skill_image relative w-[280px] md:w-[600px] order-0 xl:order-1'>
+                </Slide>
                 <Slide direction='right'>
-                  <Image src={responsive_design} alt='responsive_design' />
-                </Slide>                
-              </div>                
+                  <div className='skill_desc w-full font-press justify-self-start flex flex-col justify-center gap-10 order-1'>
+                    <div className='skill_header  text-[14px] md:text-[32px] flex justify-center'>
+                      <span className='text-[#017ACC]'>{"<> "}</span>
+                      <span>Writing Code</span>
+                      <span>
+                        <Typewriter
+                          options={{
+                            strings: [""],
+                            autoStart: true,
+                            loop: true,
+                          }}
+                        /> 
+                      </span>
+                      <span className='text-[#017ACC]'>{"</>"}</span>
+                    </div>
+                    <div className='description flex flex-col justify-center items-start text-[13px] md:text-[16px] px-6 '>
+                      <span className='text-[#017ACC]'>{"<span>"}</span>
+                      <span className='ml-5'>I create websites and applications using the Javascript programming language. I also use different tools that make my code re-usable, more readable and easier to manage.</span>
+                      <span className='text-[#017ACC]'>{"</span>"}</span>
+                    </div>
+                  </div>
+                </Slide>
 
-              <Slide direction='left'>
-                <div className='skill_desc w-full font-press justify-self-start flex flex-col justify-center gap-10'>
-                  <div className='skill_header  text-[14px] md:text-[32px] flex justify-center'>
+
+              </div>
+              <div className='responsive_design grid xl:grid-cols-2 justify-items-center gap-y-8 md:gap-0 overflow-hidden'>
+                  <div className='skill_image relative w-[280px] md:w-[600px] order-0 xl:order-1'>
+                  <Slide direction='right'>
+                    <Image src={responsive_design} alt='responsive_design' />
+                  </Slide>                
+                </div>                
+
+                <Slide direction='left'>
+                  <div className='skill_desc w-full font-press justify-self-start flex flex-col justify-center gap-10'>
+                    <div className='skill_header  text-[14px] md:text-[32px] flex justify-center'>
+                      <span className='text-gray-600'>{"<"}</span>
+                      <span className='text-green-600'>Responsive Design</span>
+                      <span>
+                        <Typewriter
+                          options={{
+                            strings: [""],
+                            autoStart: true,
+                            loop: true,
+                          }}
+                        /> 
+                      </span>
+                      <span className='text-gray-600'>{"/>"}</span>
+                    </div>
+                    <div className='description flex flex-col justify-center items-start text-[13px] md:text-[16px] px-6'>
+                      <span className='text-[#017ACC]'>{"<p>"}</span>
+                      <span className='ml-5'>When creating websites and applications, I always work in such a way that they are adapted to both desktop and mobile devices.</span>
+                      <span className='text-[#017ACC]'>{"</p>"}</span>
+                    </div>
+                  </div>                
+                </Slide>
+
+              </div>
+            </div>            
+          </Element>
+          <Element name='tools'>
+            <div className='tools flex flex-col mb-16'>
+              <div className='header_neon relative flex justify-center mb-14 lg:mb-32'>
+                <h1 className="text-white font-press neon-text text-3xl lg:text-4xl text-center">TOOLS I USE </h1>
+              </div>  
+              <div className='tools-images grid grid-cols-2 lg:grid-cols-4 justify-items-center items-center gap-4'>
+                  <Zoom>
+                    <Image width={200} src={html} alt="js"/>
+                    <Image width={200} src={css} alt="js"/>
+                    <Image width={200} src={js} alt="js"/>
+                    <Image width={200} src={ts} alt="js"/>
+                    <Image width={200} src={react} alt="js"/>
+                    <Image width={200} src={next} alt="js"/>
+                    <Image width={280} src={redux} alt="js"/>
+                    <Image width={280} src={reactform} alt="js"/>
+                    <Image width={280} src={tailwind} alt="js"/>
+                    <Image width={280} src={mui} alt="js"/>
+                    <Image width={280} src={sanity} alt="js"/>
+                    <Image width={280} src={mongodb} alt="js"/>                
+                  </Zoom>
+              </div>
+            </div>
+          </Element>
+          <Element name='goals'>
+            <div className='my_goals relative flex flex-col mb-16 px-5 md:p-0'>
+              <div className='header_neon relative flex justify-center mb-14 lg:mb-32 z-50'>
+                <h1 className="text-white font-press neon-text text-3xl lg:text-4xl text-center">HOW I WORK</h1>
+              </div>
+              <div className='goals-desc font-press z-50 grid grid-cols-1 xl:grid-cols-2 justify-items-center gap-y-7'>
+                <div className='commitment w-fit flex flex-col items-start'>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
                     <span className='text-gray-600'>{"<"}</span>
-                    <span className='text-green-600'>Responsive Design</span>
-                    <span>
-                      <Typewriter
-                        options={{
-                          strings: [""],
-                          autoStart: true,
-                          loop: true,
-                        }}
-                      /> 
-                    </span>
-                    <span className='text-gray-600'>{"/>"}</span>
+                    <span className='text-green-600'>CommitmentToWork</span>
+                    <span className='text-gray-600'>{">"}</span>
                   </div>
-                  <div className='description flex flex-col justify-center items-start text-[13px] md:text-[16px] px-6'>
-                    <span className='text-[#017ACC]'>{"<p>"}</span>
-                    <span className='ml-5'>When creating websites and applications, I always work in such a way that they are adapted to both desktop and mobile devices.</span>
-                    <span className='text-[#017ACC]'>{"</p>"}</span>
+                  <p className='text-black text-[11px] md:text-[14px] w-full md:w-[600px]  flex pl-10'>
+                    I approach each project individually. 
+                    I select solutions used in projects individually for each of them based on the needs of the project. 
+                    I am always fully committed to the work I do.
+                  </p>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
+                    <span className='text-gray-600'>{"</"}</span>
+                    <span className='text-green-600'>CommitmentToWork</span>
+                    <span className='text-gray-600'>{">"}</span>
+                  </div>                
+                </div>
+                <div className='reaction w-fit flex flex-col items-start'>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
+                    <span className='text-gray-600'>{"<"}</span>
+                    <span className='text-green-600'>Reaction</span>
+                    <span className='text-gray-600'>{">"}</span>
                   </div>
-                </div>                
-              </Slide>
+                  <p className='text-black w-full text-[11px] md:text-[14px] md:w-[600px] flex pl-10'>
+                    I want my projects to be at an ever-higher level, and the reaction of people who watch them is always the best.
+                  </p>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
+                    <span className='text-gray-600'>{"</"}</span>
+                    <span className='text-green-600'>Reaction</span>
+                    <span className='text-gray-600'>{">"}</span>
+                  </div>                
+                </div>
+                <div className='opinion w-fit flex flex-col items-start'>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
+                    <span className='text-gray-600'>{"<"}</span>
+                    <span className='text-green-600'>Opinion</span>
+                    <span className='text-gray-600'>{">"}</span>
+                  </div>
+                  <p className='text-black w-full md:w-[600px] text-[11px] md:text-[14px] flex pl-10'>
+                    I always take into account the opinion of other people - it is the basis for my development as a front-end developer.
+                  </p>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
+                    <span className='text-gray-600'>{"</"}</span>
+                    <span className='text-green-600'>Opinion</span>
+                    <span className='text-gray-600'>{">"}</span>
+                  </div>                
+                </div>
+                <div className='development w-fit flex flex-col items-start'>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
+                    <span className='text-gray-600'>{"<"}</span>
+                    <span className='text-green-600'>Development</span>
+                    <span className='text-gray-600'>{">"}</span>
+                  </div>
+                  <p className='text-black w-full text-[11px] md:text-[14px] md:w-[600px] flex pl-10'>
+                    I create new projects and take part in various courses, exchange experiences with other developers - this is my way of development.
+                  </p>
+                  <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
+                    <span className='text-gray-600'>{"</"}</span>
+                    <span className='text-green-600'>Development</span>
+                    <span className='text-gray-600'>{">"}</span>
+                  </div>                
+                </div>
+              </div>
+              <div className='goals-footer font-press w-full flex justify-center items-center z-50 mt-10'>
+                <p className='text-black w-full text-[11px] md:text-[14px] md:w-[600px] text-center'>
+                  Commitment, willingness to get the best result and learning from mistakes and criticism of others are the basis for my development. 
+                  Therefore, in my work I apply the above factors.
+                </p>
+              </div>
+            </div>
+          </Element>
+          <Element name='projects'>
+            <Projects/>            
+          </Element>
 
-            </div>
-          </div>
-          <div className='tools flex flex-col mb-16'>
-            <div className='header_neon relative flex justify-center mb-14 lg:mb-32'>
-              <h1 className="text-white font-press neon-text text-3xl lg:text-4xl text-center">TOOLS I USE </h1>
-            </div>  
-            <div className='tools-images grid grid-cols-2 lg:grid-cols-4 justify-items-center items-center gap-4'>
-                <Zoom>
-                  <Image width={200} src={html} alt="js"/>
-                  <Image width={200} src={css} alt="js"/>
-                  <Image width={200} src={js} alt="js"/>
-                  <Image width={200} src={ts} alt="js"/>
-                  <Image width={200} src={react} alt="js"/>
-                  <Image width={200} src={next} alt="js"/>
-                  <Image width={280} src={redux} alt="js"/>
-                  <Image width={280} src={reactform} alt="js"/>
-                  <Image width={280} src={tailwind} alt="js"/>
-                  <Image width={280} src={mui} alt="js"/>
-                  <Image width={280} src={sanity} alt="js"/>
-                  <Image width={280} src={mongodb} alt="js"/>                
-                </Zoom>
-            </div>
-          </div>
-          <div className='my_goals relative flex flex-col mb-16 px-5 md:p-0'>
-            <div className='header_neon relative flex justify-center mb-14 lg:mb-32 z-50'>
-              <h1 className="text-white font-press neon-text text-3xl lg:text-4xl text-center">HOW I WORK</h1>
-            </div>
-            <div className='goals-desc font-press z-50 grid grid-cols-1 xl:grid-cols-2 justify-items-center gap-y-7'>
-              <div className='commitment w-fit flex flex-col items-start'>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"<"}</span>
-                  <span className='text-green-600'>CommitmentToWork</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>
-                <p className='text-black text-[11px] md:text-[14px] w-full md:w-[600px]  flex pl-10'>
-                  I approach each project individually. 
-                  I select solutions used in projects individually for each of them based on the needs of the project. 
-                  I am always fully committed to the work I do.
-                </p>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"</"}</span>
-                  <span className='text-green-600'>CommitmentToWork</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>                
-              </div>
-              <div className='reaction w-fit flex flex-col items-start'>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"<"}</span>
-                  <span className='text-green-600'>Reaction</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>
-                <p className='text-black w-full text-[11px] md:text-[14px] md:w-[600px] flex pl-10'>
-                  I want my projects to be at an ever-higher level, and the reaction of people who watch them is always the best.
-                </p>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"</"}</span>
-                  <span className='text-green-600'>Reaction</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>                
-              </div>
-              <div className='opinion w-fit flex flex-col items-start'>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"<"}</span>
-                  <span className='text-green-600'>Opinion</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>
-                <p className='text-black w-full md:w-[600px] text-[11px] md:text-[14px] flex pl-10'>
-                  I always take into account the opinion of other people - it is the basis for my development as a front-end developer.
-                </p>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"</"}</span>
-                  <span className='text-green-600'>Opinion</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>                
-              </div>
-              <div className='development w-fit flex flex-col items-start'>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"<"}</span>
-                  <span className='text-green-600'>Development</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>
-                <p className='text-black w-full text-[11px] md:text-[14px] md:w-[600px] flex pl-10'>
-                  I create new projects and take part in various courses, exchange experiences with other developers - this is my way of development.
-                </p>
-                <div className='goals_header  text-[14px] md:text-[22px] flex justify-center'>
-                  <span className='text-gray-600'>{"</"}</span>
-                  <span className='text-green-600'>Development</span>
-                  <span className='text-gray-600'>{">"}</span>
-                </div>                
-              </div>
-            </div>
-            <div className='goals-footer font-press w-full flex justify-center items-center z-50 mt-10'>
-              <p className='text-black w-full text-[11px] md:text-[14px] md:w-[600px] text-center'>
-                Commitment, willingness to get the best result and learning from mistakes and criticism of others are the basis for my development. 
-                Therefore, in my work I apply the above factors.
-              </p>
-            </div>
-          </div>
-          <Projects/>
         </div>
     </Parallax>
         

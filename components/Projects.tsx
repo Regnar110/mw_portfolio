@@ -2,10 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import apart from '../public/projects/apart.png'
 import apple from '../public/projects/apple.webp'
+import weather from '../public/projects/weather.png'
 import {FaGithubAlt} from 'react-icons/fa'
 import {RiDoorOpenFill} from 'react-icons/ri'
 import Link from 'next/link'
-import { Slide } from 'react-awesome-reveal'
+
 const Projects = () => {
   return (
     <div className='projects flex flex-col'>
@@ -48,6 +49,26 @@ const Projects = () => {
                             <span className='text-[12px]'>Github</span>
                         </Link>
                         <Link className='flex flex-col justify-center items-center border-[1px] shadow-xl p-3' href="https://devbymat-appleredesign.netlify.app/">
+                            <RiDoorOpenFill color='#AA1C31' size={40}/>
+                            <span className='text-[12px]'>Visit</span>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <div className='single_project flex flex-col xl:flex-row'>
+                <Image className='w-full xl:w-1/2' src={weather} alt='apart' />                             
+                <div className='single_project_desc flex flex-col items-center gap-5  p-4'>
+                    <h1 className='text-[18px] md:text-[22px] text-[#017ACC]'>Weather App</h1>
+                    <p className='h-full text-[10px] md:text-[12px] text-black text-center'>
+                        Weather App is an application written using <span className='text-[#16A34A]'>React</span> and <span className='text-[#16A34A]'>Node.js</span> + <span className='text-[#16A34A]'>Express.js</span> backend. The application uses several Google programming interfaces such as GeoLocation, Reverse Geolocation, TimeZone, Places (for autocomplete searches for places) and the OpenMeteo API and Navigator API of the browser, which allows you to obtain the user's location.
+                        The application presents seven-day weather data, with animated icons, the current time, sunrise and sunset times, and current weather data for the day.
+                    </p>
+                    <div className='buttons flex gap-5'>
+                        <Link className='flex flex-col justify-center items-center border-[1px] shadow-xl p-3' href="https://github.com/Regnar110/react_weather">
+                            <FaGithubAlt color='#AA1C31' size={40}/>
+                            <span className='text-[12px]'>Github</span>
+                        </Link>
+                        <Link className='flex flex-col justify-center items-center border-[1px] shadow-xl p-3' href="https://regnar110weatherapp.netlify.app/">
                             <RiDoorOpenFill color='#AA1C31' size={40}/>
                             <span className='text-[12px]'>Visit</span>
                         </Link>
