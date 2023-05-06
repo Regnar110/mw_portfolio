@@ -24,6 +24,7 @@ import mongodb from '../public/tools/mongodb.png'
 import reactform from '../public/tools/reactform.jpg'
 import Projects from '@/components/Projects';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 
 export default function Home() {
@@ -98,10 +99,10 @@ export default function Home() {
         className="aspect-[2/1] bg-gray-900 h-[100vh] lg:h-auto"
       />
     </Element>
-    <Parallax speed={20}>
-        <div className=' relative top-[-200px] mx-2  md:mx-6  bg-white shadow-2xl rounded-lg flex flex-col overflow-hidden'>
-          <Parallax speed={10} className='m-0 p-0'>
-            <div className='section_image w-full flex justify-center relative top-[-50px] lg:top-[-100px]'>
+    <Parallax speed={0}>
+        <div className=' relative top-[-50px] mx-2  md:mx-6  bg-white shadow-2xl rounded-lg flex flex-col'>
+          <Parallax speed={20} className='m-0 p-0'>
+            <div className='section_image w-full flex justify-center relative top-[-50px] lg:top-[-100px] z-50'>
               <div className='landing_circle relative w-[180px] lg:w-[250px] rounded-full overflow-hidden border-[3px] border-white shadow-2xl'>
                 <Image width={250} src={person} alt="red_person"/>
               </div>
@@ -284,10 +285,7 @@ export default function Home() {
 
         </div>
     </Parallax>
-        
-   
-     
-
+    <Footer />
     </section>
   )
 }

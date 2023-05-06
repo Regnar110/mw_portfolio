@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link } from 'react-scroll'
 import MediaQuery from 'react-responsive'
 import { slide as Menu } from 'react-burger-menu'
 import {GiHamburgerMenu} from 'react-icons/gi'

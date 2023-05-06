@@ -10,12 +10,12 @@ import Link from 'next/link'
 
 const Projects = () => {
   return (
-    <div className='projects flex flex-col'>
+    <div className='projects flex flex-col rounded-lg'>
         <div className='header_neon relative flex justify-center mb-14 lg:mb-32'>
             <h1 className="text-white font-press neon-text text-3xl lg:text-4xl text-center">MY PROJECTS </h1>
         </div>
         <div className='project_list font-press flex flex-col gap-5'>
-            <div className='single_project flex flex-col xl:flex-row'>
+            <div className='single_project flex flex-col xl:flex-row overflow-hidden'>
                 <Image className='w-full xl:w-1/2' src={apart} alt='apart' />
                 <div className='single_project_desc flex flex-col items-center gap-5  p-4'>
                     <h1 className='text-[18px] md:text-[22px] text-[#017ACC]'>Apart Shop</h1>
