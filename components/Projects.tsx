@@ -79,7 +79,7 @@ const Projects = () => {
             <div className='single_project flex flex-col xl:flex-row-reverse'>
                 <Image className='w-full xl:w-1/2' src={portfolio} alt='apart' />                             
                 <div className='single_project_desc flex flex-col items-center gap-5  p-4'>
-                    <h1 className='text-[18px] md:text-[22px] text-[#017ACC]'>Weather App</h1>
+                    <h1 className='text-[18px] md:text-[22px] text-[#017ACC]'>Portfolio</h1>
                     <p className='h-full text-[10px] md:text-[12px] text-black text-center'>
                         A simple one-page website. Used using <span className='text-[#16A34A]'>React</span>. It introduces me as a developer and presents my projects.
                     </p>
