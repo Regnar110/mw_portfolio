@@ -84,11 +84,11 @@ const Projects = () => {
                         A simple one-page website. Used using <span className='text-[#16A34A]'>React</span>. It introduces me as a developer and presents my projects.
                     </p>
                     <div className='buttons flex gap-5'>
-                        <Link className='flex flex-col justify-center items-center border-[1px] shadow-xl p-3' href="https://github.com/Regnar110/react_weather">
+                        <Link className='flex flex-col justify-center items-center border-[1px] shadow-xl p-3' href="https://github.com/Regnar110/mw_portfolio">
                             <FaGithubAlt color='#AA1C31' size={40}/>
                             <span className='text-[12px]'>Github</span>
                         </Link>
-                        <Link className='flex flex-col justify-center items-center border-[1px] shadow-xl p-3' href="https://regnar110weatherapp.netlify.app/">
+                        <Link className='flex flex-col justify-center items-center border-[1px] shadow-xl p-3' href="https://devbymatfolio.netlify.app/">
                             <RiDoorOpenFill color='#AA1C31' size={40}/>
                             <span className='text-[12px]'>Visit</span>
                         </Link>
